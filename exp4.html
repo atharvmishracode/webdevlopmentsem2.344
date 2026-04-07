@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result</title>
+</head>
+
+<body>
+
+<h2>Result Program</h2>
+
+<button onclick="marks()">Enter Marks</button>
+
+<p id="output"></p>
+
+<script>
+function marks() {
+  var n = prompt("Kitne subject hai?");
+  var total = 0;
+
+  for (var i = 1; i <= n; i++) {
+    var m = prompt("Subject " + i + " ke marks daalo:");
+    total = total + Number(m);
+  }
+
+  var avg = total / n;
+  var grade;
+
+  if (avg >= 60) {
+    grade = "A";
+  } else if (avg >= 50) {
+    grade = "B";
+  } else if (avg >= 40) {
+    grade = "C";
+  } else {
+    grade = "Fail";
+  }
+
+  document.getElementById("output").innerHTML =
+    "Total = " + total + "<br>" +
+    "Average = " + avg + "<br>" +
+    "Grade = " + grade;
+}
+</script>
+
+</body>
+</html>
